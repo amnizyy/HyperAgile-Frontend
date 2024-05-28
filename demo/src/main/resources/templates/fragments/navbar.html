@@ -1,0 +1,45 @@
+<div th:fragment="navbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/home}">Home</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" th:if="${isAdmin}">
+          <a class="nav-link" th:href="@{/manageuser}">Users</a>
+        </li>
+
+        <li class="nav-item" th:unless="${isAdmin}">
+          <a id="test-case-link" class="nav-link" th:href="@{/view}">Test Case</a>
+        </li>
+
+        <li class="nav-item" th:if="${isAdmin}">
+          <a class="nav-link" th:href="@{/manageroles}">Roles</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/changepassword}">Change Password</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <form th:action="@{/logout}" method="post" class="form-inline">
+            <button type="submit" class="btn btn-block border">
+              <i class="bi bi-box-arrow-right"> Logout</i>
+            </button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
