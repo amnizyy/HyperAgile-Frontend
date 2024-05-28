@@ -15,7 +15,7 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		System.out.println("Let's inspect the beans provided by Spring Boot: RUN LETSGOO!");
+		System.out.println("Let's inspect the beans provided by Spring Boot: LETSGOO WEB TECH!");
 	}
 
 }
